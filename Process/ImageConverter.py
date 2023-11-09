@@ -35,8 +35,10 @@ class ImageConverter:
     def convert_image_list(self, image_list: list[Image], file_name_list: list[str]):
         for index, image in enumerate(image_list):
             file_name = file_name_list[index]
+            print("{0} isimli dosya donusturuluyor.".format(file_name))
             file_name = file_name[:file_name.rindex(".")]
             image.convert("RGB").save("{0}\\{1}{2}".format(self.__destination_path, file_name, self.__destination_extension.value))
+            print("{0} isimli dosya donusturuldu.".format(file_name))
 
     def start_converter(self):
         source_image_count = self.__image_loader.get_source_image_count()
