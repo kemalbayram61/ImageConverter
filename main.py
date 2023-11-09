@@ -1,16 +1,9 @@
-# This is a sample Python script.
+from Process.ImageConverter import ImageConverter
+from Constants.ImageExtension import ImageExtension
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    source_path = "C:\\Users\\Kemal Bayram\\Downloads"
+    destination_path = "C:\\Users\\Kemal Bayram\\Downloads"
+    max_read_per_period = 50
+    image_converter = ImageConverter(source_path=source_path, destination_path=destination_path, max_read_per_period=max_read_per_period, source_extension=ImageExtension.HEIC)
+    image_converter.start_converter()
